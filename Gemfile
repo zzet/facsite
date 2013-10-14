@@ -1,45 +1,98 @@
+ruby '2.0.0'
+
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '>= 4.0.0'
+gem 'pg'
+gem 'puma'
+gem 'draper'
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'mini_magick'
+gem 'cocoon'
+gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', require: false
+gem 'rails-observers'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'less-rails-bootstrap'
+gem 'twitter-bootstrap-rails', github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
+gem 'bootstrap-datetimepicker-rails'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'google-analytics-rails'
 
-# Use Uglifier as compressor for JavaScript assets
+gem 'active_model_serializers'
+
+gem 'therubyracer', platforms: :ruby
 gem 'uglifier', '>= 1.3.0'
+#gem 'turbolinks'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'sass-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'haml-rails'
+gem 'less-rails'
+gem 'chosen-rails'
+gem 'js-routes'
+gem 'whenever'
+gem 'backup'
+gem 'exceptional'
+gem 'bootstrap-wysihtml5-rails'
+gem 'compass-rails', github: 'Compass/compass-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'http_accept_language'
+gem 'redcarpet'
+gem 'wrong'
+gem 'configus'
+gem 'russian'
+gem 'validates'
+gem 'state_machine'
+gem 'term-ansicolor'
+gem 'virtus'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'simple_form', github: "plataformatec/simple_form"
+gem 'authority'
+gem 'ransack'
+gem 'kaminari'
+gem 'enumerize'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'minitest-rails'
+gem 'axlsx_rails'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+group :test do
+  # gem 'ruby-prof'
+  gem 'test_after_commit'
+  gem "rake"
+  gem 'ci_reporter'
+  gem 'mocha', require: false
+  gem 'spring'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'site_prism'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  # gem 'selenium-webdriver'
+  gem 'launchy'
+
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem 'vendorer'
+  gem 'unicorn'
+  gem 'quiet_assets'
+  gem 'pry-rails'
+  gem 'pre-commit'
+  gem 'capistrano', '~> 2.5.x'
+  gem 'capistrano-ext'
+  gem 'rvm-capistrano'
+  # gem 'bullet'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test, :development do
+  gem 'factory_girl_rails'
+  gem 'pry'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :doc do
+  gem 'sdoc', require: false
+end
