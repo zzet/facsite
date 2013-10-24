@@ -54,6 +54,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    annotate (2.5.0)
+      rake
     arel (4.0.0)
     atomic (1.1.14)
     authority (2.9.0)
@@ -391,6 +393,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  annotate
   authority
   axlsx_rails
   backup

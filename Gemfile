@@ -59,6 +59,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'minitest-rails'
 gem 'axlsx_rails'
+gem 'annotate'
 
 group :test do
   # gem 'ruby-prof'

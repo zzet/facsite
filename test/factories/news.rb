@@ -2,10 +2,9 @@
 
 FactoryGirl.define do
   factory :news do
-    title "MyString"
-    description "MyText"
-    body "MyText"
-    photo "MyString"
-    author_id 1
+    title
+    description
+    body
+    #author
   end
 end
