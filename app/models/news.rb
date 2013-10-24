@@ -14,23 +14,36 @@
 
 class News < ActiveRecord::Base
 
+  #belongs_to :author, class_name: User
+
+  validates :title,       presence: true
+  validates :description, presence: true
+  validates :body,        presence: true
+  validates :slug,        presence: true, slug: true, uniqueness: {scope: :company_id}
+
   mount_uploader :photo, ::ImageUploader
 
-  state_machine :state, initial: :unpublished do
+  state_machine :state, initial: :draft do
     state :published
-    state :unpublished
+    state :draft
     state :archived
 
     event :publish do
-      transition [:unpublished] => :published
+      transition [:draft] => :published
     end
 
-    event :unpublish do
-      transition published: :unpublished
+    event :to_draft do
+      transition published: :draft
     end
 
     event :archive do
-      transition unpublished: :archived
+      transition draft: :archived
     end
+  end
+
+  include NewsRepository
+
+  def to_s
+    name
   end
 end

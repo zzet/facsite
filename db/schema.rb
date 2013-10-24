@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 20131014212537) do
     t.string   "title"
     t.text     "description"
     t.text     "body"
-    t.string   "photo"
+    t.string   "pictute"
+    t.string   "slug"
+    t.string   "state"
     t.integer  "author_id"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
