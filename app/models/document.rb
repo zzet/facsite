@@ -1,25 +1,8 @@
-# == Schema Information
-#
-# Table name: news
-#
-#  id          :integer          not null, primary key
-#  title       :string(255)
-#  description :text
-#  body        :text
-#  photo       :string(255)
-#  author_id   :integer
-#  created_at  :datetime
-#  updated_at  :datetime
-#
-
-class News < ActiveRecord::Base
-
-  #belongs_to :author, class_name: User
+class Document < ActiveRecord::Base
 
   validates :title,       presence: true
   validates :description, presence: true
   validates :body,        presence: true
-  validates :slug,        presence: true, slug: true, uniqueness: true
 
   mount_uploader :photo, ::ImageUploader
 
@@ -41,7 +24,7 @@ class News < ActiveRecord::Base
     end
   end
 
-  include NewsRepository
+  include DocumentRepository
 
   def to_s
     name

@@ -16,8 +16,12 @@ class Web::Admin::NewsControllerTest < ActionController::TestCase
   end
 
   test "should post create" do
-    post :create
-    assert_response :success
+    attrs = attribures_for(:new)
+    post :create, news: attrs
+    assert_response :redirect
+
+    new_news = News.last
+    assert(new_news.title == attrs[:title])
   end
 
   test "should get edit" do

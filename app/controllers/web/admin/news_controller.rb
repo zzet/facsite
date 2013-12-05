@@ -4,11 +4,11 @@ class Web::Admin::NewsController < ApplicationController
   end
 
   def new
-    @news = Admin::NewsEditType.new
+    @news = ::Admin::NewsEditType.new
   end
 
   def create
-    @news = Admin::NewsEditType.new(params[:news])
+    @news = ::Admin::NewsEditType.new(params[:news])
   end
 
   def edit
@@ -17,7 +17,7 @@ class Web::Admin::NewsController < ApplicationController
 
   def update
     news = News.find(params[:id])
-    @news = news.becames Admin::NewsEditType
+    @news = news.becames ::Admin::NewsEditType
     if @news.update(params[:news])
       #      f(:success)
       redirect_to edit_admin_news_path(@news)
