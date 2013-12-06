@@ -1,4 +1,4 @@
-class Web::Admin::NewsController < ApplicationController
+class Web::Admin::NewsController < Web::Admin::ApplicationController
   def index
     @news = News.scoped
   end
@@ -9,10 +9,12 @@ class Web::Admin::NewsController < ApplicationController
 
   def create
     @news = ::Admin::NewsEditType.new(params[:news])
+    redirect_to admin_news_path(@news)
   end
 
   def edit
-    @news = News.find(params[:id])
+    news = News.find(params[:id])
+    @news = news.becomes ::Admin::NewsEditType
   end
 
   def update
@@ -28,6 +30,8 @@ class Web::Admin::NewsController < ApplicationController
   end
 
   def destroy
+    @news.destroy
+    redirect_to admin_news_index_path
   end
 
   def show

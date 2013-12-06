@@ -1,3 +1,5 @@
-%h1 Web::Admin::News#edit
-%p Find me in app/views/web/admin/news/edit.html.haml
-= render "form"
+%h1 Edit News
+
+.col-md-8
+  = simple_form_for @news, url: admin_news_index_path, method: :put, html: {class: 'form-horizontal span6'} do |f|
+    = render "form", f: f

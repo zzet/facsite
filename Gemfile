@@ -1,8 +1,8 @@
 ruby '2.0.0'
 
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-gem 'rails', '>= 4.0.0'
+gem 'rails', '4.0.1'
 gem 'pg'
 gem 'puma'
 gem 'draper'
@@ -13,10 +13,11 @@ gem 'cocoon'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: false
 gem 'rails-observers'
+gem 'le'
 
-gem 'less-rails-bootstrap'
-gem 'twitter-bootstrap-rails', github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
-gem 'bootstrap-datetimepicker-rails'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+  :github => 'anjlab/bootstrap-rails'
+gem 'anjlab-widgets'
 
 gem 'google-analytics-rails'
 
@@ -36,8 +37,7 @@ gem 'chosen-rails'
 gem 'js-routes'
 gem 'whenever'
 gem 'backup'
-gem 'exceptional'
-gem 'bootstrap-wysihtml5-rails'
+gem 'redactor-rails'
 gem 'compass-rails', github: 'Compass/compass-rails'
 
 gem 'http_accept_language'
@@ -49,7 +49,7 @@ gem 'validates'
 gem 'state_machine'
 gem 'term-ansicolor'
 gem 'virtus'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'simple_form', github: "plataformatec/simple_form"
 gem 'authority'
 gem 'ransack'
@@ -58,40 +58,44 @@ gem 'enumerize'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'minitest-rails'
-gem 'axlsx_rails'
-gem 'annotate'
+gem 'apipie-rails'
+gem 'angularjs-rails'
+gem 'rollbar'
+gem 'mail_view'
+gem 'factory_girl_rails'
+gem 'breadcrumbs_on_rails'
+# gem 'capybara-console'
+
+group :development, :test do
+  gem 'listen'
+  gem 'pry'
+end
 
 group :test do
   # gem 'ruby-prof'
-  gem 'test_after_commit'
   gem "rake"
   gem 'ci_reporter'
   gem 'mocha', require: false
   gem 'spring'
-  gem 'capybara'
+  gem "spring-commands-testunit"
+  gem 'capybara-rails', github: "mokevnin/capybara-rails"
   gem 'poltergeist'
   gem 'site_prism'
 
-  # gem 'selenium-webdriver'
   gem 'launchy'
-
 end
 
 group :development do
+  # gem 'meta_request'
   gem 'vendorer'
   gem 'unicorn'
   gem 'quiet_assets'
-  gem 'pry-rails'
   gem 'pre-commit'
+  gem 'pry-rails'
   gem 'capistrano', '~> 2.5.x'
   gem 'capistrano-ext'
   gem 'rvm-capistrano'
   # gem 'bullet'
-end
-
-group :test, :development do
-  gem 'factory_girl_rails'
-  gem 'pry'
 end
 
 group :doc do

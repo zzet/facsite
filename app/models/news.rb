@@ -21,7 +21,7 @@ class News < ActiveRecord::Base
   validates :body,        presence: true
   validates :slug,        presence: true, slug: true, uniqueness: true
 
-  mount_uploader :photo, ::ImageUploader
+  mount_uploader :picture, ::ImageUploader
 
   state_machine :state, initial: :draft do
     state :published

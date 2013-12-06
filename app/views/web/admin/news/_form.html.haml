@@ -1,8 +1,6 @@
-.span9
-  = simple_form_for admin_news_path(@news) do |f|
-    = f.input :title
-    = f.input :description, as: :text
-    = f.input :body, as: :text
-    = f.input :pucture
-    = f.input :slug
-    = f.button :submit
+= f.input :title
+= f.input :description, as: :editor
+= f.input :body, as: :editor
+= f.input :slug
+= f.input :pucture
+= f.button :submit
