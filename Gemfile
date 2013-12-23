@@ -80,7 +80,7 @@ group :test do
   gem 'ci_reporter'
   gem 'mocha', require: false
   gem 'spring'
-  gem "spring-commands-testunit"
+  gem "spring-commands-testunit", require: false
   #gem 'capybara-rails', github: "mokevnin/capybara-rails"
   #gem 'poltergeist'
   #gem 'site_prism'
