@@ -1,0 +1,24 @@
+---
+ru:
+  application:
+    name: 'Сайт ИстФака'
+
+  layouts:
+    web:
+      admin:
+        shared:
+          navbar:
+            news: 'Новости'
+            faculty: 'Факультет'
+            documents: ' Документы'
+            categories: 'Категории'
+            guest_book: 'Гостевая книга'
+  '':
+    inputs:
+      current_state: 'Состояние'
+
+  helpers:
+    actions: 'Управление'
+    links:
+      new: 'Создать'
+      cancel: 'Отмена'

@@ -67,6 +67,7 @@ gem 'mail_view'
 gem 'factory_girl_rails'
 gem 'breadcrumbs_on_rails'
 # gem 'capybara-console'
+gem 'untranslated'
 
 group :development, :test do
   gem 'listen'
