@@ -1,0 +1,23 @@
+base: &base
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: facsite
+
+production:
+  <<: *base
+  database: facsite_production
+
+
+development:
+  <<: *base
+  database: facsite_development
+
+test:
+  <<: *base
+  database: facsite_test
+  host: /var/run/postgresql
+  pool: 5
+  username: postgres
+  password:
