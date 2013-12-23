@@ -24,7 +24,7 @@ class Document < ActiveRecord::Base
   validates :title,       presence: true
   validates :description, presence: true
   validates :body,        presence: true
-  validates :attachment,  presence: true
+  #validates :attachment,  presence: true
 
   mount_uploader :photo, ::ImageUploader
   mount_uploader :attachment, ::AttachmentUploader

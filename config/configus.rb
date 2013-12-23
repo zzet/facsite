@@ -27,6 +27,9 @@ Configus.build Rails.env do
   end
 
   env :test, parent: :production do
+    carrierwave do
+      storage :file
+    end
   end
 
   env :staging, parent: :production do

@@ -15,9 +15,9 @@
 
 FactoryGirl.define do
   factory :departament do
-    name "MyString"
-    description "MyText"
-    history "MyText"
-    image "MyString"
+    name
+    description
+    history
+    image       { fixture_file_upload(Rails.root.join('test/fixtures/image.png'), 'image/png') }
   end
 end

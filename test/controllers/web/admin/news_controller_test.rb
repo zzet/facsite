@@ -16,7 +16,7 @@ class Web::Admin::NewsControllerTest < ActionController::TestCase
   end
 
   test "should post create" do
-    attrs = attribures_for(:new)
+    attrs = attributes_for(:news)
     post :create, news: attrs
     assert_response :redirect
 
@@ -25,22 +25,34 @@ class Web::Admin::NewsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    news = create :news
+
+    get :edit, id: news.id
     assert_response :success
   end
 
   test "should get update" do
-    put :update
-    assert_response :success
+    news = create :news
+    attrs = attributes_for :news
+    put :update, id: news.id, news: attrs
+    assert_response :redirect
+
+    news.reload
+    assert(news.title == attrs[:title])
   end
 
   test "should get destroy" do
-    delete :destroy
-    assert_response :success
+    news = create :news
+    delete :destroy, id: news.id
+    assert_response :redirect
+
+    removed_news = News.find_by(id: news.id)
+    assert(removed_news == nil)
   end
 
   test "should get show" do
-    get :show
+    news = create :news
+    get :show, id: news.id
     assert_response :success
   end
 

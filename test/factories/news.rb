@@ -24,6 +24,8 @@ FactoryGirl.define do
     title
     description
     body
+    slug
+    #picture       { fixture_file_upload(Rails.root.join('test/fixtures/image.png'), 'image/png') }
     #author
   end
 end

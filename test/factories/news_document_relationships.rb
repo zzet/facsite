@@ -12,8 +12,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :news_document_relationship do
-    news_id 1
-    document_id 1
-  end
+  #factory :news_document_relationship do
+    #news
+    #document
+  #end
 end

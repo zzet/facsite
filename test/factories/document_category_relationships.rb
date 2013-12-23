@@ -13,7 +13,7 @@
 
 FactoryGirl.define do
   factory :document_category_relationship do
-    document_id 1
-    category_id 1
+    document
+    category
   end
 end

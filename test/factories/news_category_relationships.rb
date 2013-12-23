@@ -13,7 +13,7 @@
 
 FactoryGirl.define do
   factory :news_category_relationship do
-    news_id 1
-    category_id 1
+    news
+    category
   end
 end

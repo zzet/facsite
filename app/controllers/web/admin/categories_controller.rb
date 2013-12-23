@@ -1,6 +1,6 @@
 class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   def index
-    @categories = Category.scoped
+    @categories = Category.all
   end
 
   def new

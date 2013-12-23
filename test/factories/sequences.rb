@@ -7,7 +7,7 @@ FactoryGirl.define do
     "string#{n}"
   end
 
-  sequence :description do |n|
+  sequence :description, aliases: [:history] do |n|
     "description#{n}"
   end
 
@@ -25,6 +25,10 @@ FactoryGirl.define do
 
   sequence :integer do |n|
     n
+  end
+
+  sequence :first_name, aliases: [:last_name] do |n|
+    "Persona#{n}"
   end
 
   sequence :email do |n|

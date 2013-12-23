@@ -11,24 +11,38 @@ class Web::Admin::DocumentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should post create" do
+    attrs = attributes_for :document
+    post :create, document: attrs
+    assert_response :redirect
+
+    new_document = Document.last
+    assert(new_document.title == attrs[:title])
   end
 
   test "should get edit" do
-    get :edit
+    document = create :document
+    get :edit, id: document.id
     assert_response :success
   end
 
   test "should get update" do
-    get :update
-    assert_response :success
+    document = create :document
+    attrs = attributes_for :document
+    put :update, id: document.id, document: attrs
+    assert_response :redirect
+
+    document.reload
+    assert(document.title == attrs[:title])
   end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    document = create :document
+    delete :destroy, id: document.id
+    assert_response :redirect
+
+    removed_document = Document.find_by(id: document.id)
+    assert(removed_document == nil)
   end
 
 end

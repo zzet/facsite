@@ -1,6 +1,6 @@
 class Web::Admin::DocumentsController < Web::Admin::ApplicationController
   def index
-    @documents = Document.scoped
+    @documents = Document.all
   end
 
   def new

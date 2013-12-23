@@ -1,4 +1,4 @@
-= simple_form_for [:admin, @faculty], :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @faculty, url: admin_faculties_path, :html => { :class => 'form-horizontal' } do |f|
   .well
     = f.input :name
     = f.input :description, as: :editor

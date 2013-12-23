@@ -1,0 +1,8 @@
+= simple_form_for @answer, url: admin_question_path(@question), :html => { :class => 'form-horizontal' } do |f|
+  .well
+    = f.input :title
+    = f.input :description
+    = f.association :question
+    .form-actions
+      = f.button :submit, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_question_path(@question), :class => 'btn'

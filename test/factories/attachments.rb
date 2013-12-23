@@ -13,11 +13,13 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
   factory :attachment do
-    title "MyString"
-    file "MyString"
-    description "MyString"
-    photo "MyString"
+    title
+    description
+    #file        { fixture_file_upload(Rails.root.join('test/fixtures/image.png'), 'image/png') }
+    #photo       { fixture_file_upload(Rails.root.join('test/fixtures/image.png'), 'image/png') }
   end
 end

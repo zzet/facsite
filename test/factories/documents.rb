@@ -17,10 +17,10 @@
 
 FactoryGirl.define do
   factory :document do
-    title "MyString"
-    attachment "MyString"
-    description "MyText"
-    body "MyText"
-    state "MyString"
+    title
+    #attachment  { fixture_file_upload(Rails.root.join('test/fixtures/image.png'), 'image/png') }
+    #photo       { fixture_file_upload(Rails.root.join('test/fixtures/image.png'), 'image/png') }
+    description
+    body
   end
 end

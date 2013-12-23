@@ -1,6 +1,6 @@
 class Web::Admin::NewsController < Web::Admin::ApplicationController
   def index
-    @news = News.scoped
+    @news = News.all
   end
 
   def new
@@ -34,6 +34,7 @@ class Web::Admin::NewsController < Web::Admin::ApplicationController
   end
 
   def destroy
+    @news = News.find(params[:id])
     @news.destroy
     redirect_to admin_news_index_path
   end

@@ -78,12 +78,13 @@ group :test do
   gem "rake"
   gem 'ci_reporter'
   gem 'mocha', require: false
-  #gem 'spring'
-  #gem "spring-commands-testunit"
+  gem 'spring'
+  gem "spring-commands-testunit"
   #gem 'capybara-rails', github: "mokevnin/capybara-rails"
   #gem 'poltergeist'
   #gem 'site_prism'
 
+  gem 'tconsole'
   gem 'launchy'
 end
 
