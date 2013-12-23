@@ -2,24 +2,36 @@
 #
 # Table name: news
 #
-#  id          :integer          not null, primary key
-#  title       :string(255)
-#  description :text
-#  body        :text
-#  photo       :string(255)
-#  author_id   :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id            :integer          not null, primary key
+#  title         :string(255)
+#  description   :text
+#  body          :text
+#  picture       :string(255)
+#  slug          :string(255)
+#  state         :string(255)
+#  author_id     :integer
+#  published_at  :datetime
+#  created_at    :datetime
+#  updated_at    :datetime
+#  newsable_id   :integer
+#  newsable_type :string(255)
 #
 
 class News < ActiveRecord::Base
 
   #belongs_to :author, class_name: User
+  #belongs_to :newsable,   polymorphic: true
+  has_many :news_category_relationships, dependent: :destroy
+  has_many :categories, through: :news_category_relationships
+
+  has_many :news_document_relationships, dependent: :destroy
+  has_many :documents, through: :news_document_relationships
 
   validates :title,       presence: true
   validates :description, presence: true
   validates :body,        presence: true
   validates :slug,        presence: true, slug: true, uniqueness: true
+  #validates :newsable,    presence: true
 
   mount_uploader :picture, ::ImageUploader
 

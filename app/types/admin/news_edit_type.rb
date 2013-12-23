@@ -1,5 +1,5 @@
 class Admin::NewsEditType < News
   include ApplicationType
 
-  permit :name, :body, :slug, :state_event, :photo, :photo_cache, :published_at
+  permit :title, :description, :body, :slug, :state_event, :picture, :picture_cache, :published_at #, :newsable
 end

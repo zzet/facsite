@@ -1,3 +1,3 @@
 class Web::Admin::ApplicationController < ApplicationController
-  layout 'web/admin/application'
+  layout 'web/admin/yeti'
 end

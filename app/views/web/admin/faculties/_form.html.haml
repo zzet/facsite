@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @faculty], :html => { :class => 'form-horizontal' } do |f|
+  .well
+    = f.input :name
+    = f.input :description, as: :editor
+    = f.input :history, as: :editor
+    = f.input :image, as: :image_preview
+    .form-actions
+      = f.button :submit, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_faculties_path, :class => 'btn'

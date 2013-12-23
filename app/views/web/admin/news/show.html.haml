@@ -1,2 +1,45 @@
-%h1 Web::Admin::News#show
-%p Find me in app/views/web/admin/news/show.html.haml
+- model_class = News
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @news.title
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @news.description.html_safe
+%p
+  %strong= model_class.human_attribute_name(:body) + ':'
+  %br
+  = @news.body.html_safe
+%p
+  %strong= model_class.human_attribute_name(:picture) + ':'
+  %br
+  = image_tag @news.picture
+%p
+  %strong= model_class.human_attribute_name(:slug) + ':'
+  %br
+  = @news.slug
+%p
+  %strong= model_class.human_attribute_name(:state) + ':'
+  %br
+  = @news.state
+%p
+  %strong= model_class.human_attribute_name(:author_id) + ':'
+  %br
+  = @news.author_id
+%p
+  %strong= model_class.human_attribute_name(:published_at) + ':'
+  %br
+  = @news.published_at
+-#%p
+  -#%strong= model_class.human_attribute_name(:newsable) + ':'
+  -#%br
+  -#= @news.newsable.try(:title)
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), admin_news_index_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_news_path(@news), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_news_path(@news), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

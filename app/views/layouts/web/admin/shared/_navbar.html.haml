@@ -5,7 +5,10 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    %a.navbar-brand{:href => root_path}= t('application.name')
+    %a.navbar-brand{:href => admin_root_path}= t('application.name')
   .navbar-collapse.collapse
     %ul.nav.navbar-nav
-      -#= menu_item t('.news'), admin_news_index_path
+      = menu_item t('.news'), admin_news_index_path
+      = menu_item t('.faculty'), admin_faculties_path
+      = menu_item t('.documents'), admin_documents_path
+      = menu_item t('.categories'), admin_categories_path

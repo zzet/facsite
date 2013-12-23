@@ -1,13 +1,13 @@
 inputs = %w[
   CollectionSelectInput
-    DateTimeInput
-      FileInput
-        GroupedCollectionSelectInput
-          NumericInput
-            PasswordInput
-              RangeInput
-                StringInput
-                  TextInput
+  DateTimeInput
+  FileInput
+  GroupedCollectionSelectInput
+  NumericInput
+  PasswordInput
+  RangeInput
+  StringInput
+  TextInput
 ]
 
 inputs.each do |input_type|

@@ -1,0 +1,10 @@
+/* Yeti
+ * Bootswatch
+ *= require chosen
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require redactor-rails
+ *= require_self
+ *= require yeti/loader
+ *= require yeti/bootswatch
+*/

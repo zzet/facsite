@@ -1,6 +1,17 @@
-= f.input :title
-= f.input :description, as: :editor
-= f.input :body, as: :editor
-= f.input :slug
-= f.input :pucture
-= f.button :submit
+= simple_form_for [:admin, @news], :html => { :class => 'form-horizontal' } do |f|
+  .well
+    = f.input :title
+    = f.input :picture, as: :image_preview
+    = f.input :description, as: :editor
+    = f.input :body, as: :editor
+    = f.input :slug
+    = f.input :state, as: :state_event
+    = f.association :categories
+    = f.association :documents
+    -#= f.input :author_id
+    = f.input :published_at
+    -#= f.input :newsable_id
+    -#= f.input :newsable_type
+    .form-actions
+      = f.button :submit, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_news_index_path, :class => 'btn'

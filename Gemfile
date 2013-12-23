@@ -15,8 +15,9 @@ gem 'sinatra', '>= 1.3.0', require: false
 gem 'rails-observers'
 gem 'le'
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-  :github => 'anjlab/bootstrap-rails'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
+gem 'twitter-bootswatch-rails', :github => 'scottvrosenthal/twitter-bootswatch-rails'
+
 gem 'anjlab-widgets'
 
 gem 'google-analytics-rails'
@@ -25,6 +26,7 @@ gem 'active_model_serializers'
 
 gem 'therubyracer', platforms: :ruby
 gem 'uglifier', '>= 1.3.0'
+gem 'closure_tree'
 #gem 'turbolinks'
 
 gem 'jquery-rails'
@@ -76,11 +78,11 @@ group :test do
   gem "rake"
   gem 'ci_reporter'
   gem 'mocha', require: false
-  gem 'spring'
-  gem "spring-commands-testunit"
-  gem 'capybara-rails', github: "mokevnin/capybara-rails"
-  gem 'poltergeist'
-  gem 'site_prism'
+  #gem 'spring'
+  #gem "spring-commands-testunit"
+  #gem 'capybara-rails', github: "mokevnin/capybara-rails"
+  #gem 'poltergeist'
+  #gem 'site_prism'
 
   gem 'launchy'
 end
@@ -95,6 +97,7 @@ group :development do
   gem 'capistrano', '~> 2.5.x'
   gem 'capistrano-ext'
   gem 'rvm-capistrano'
+  gem 'annotate'
   # gem 'bullet'
 end
 

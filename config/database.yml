@@ -3,8 +3,7 @@ base: &base
   encoding: utf8
   reconnect: false
   pool: 5
-  username: vagrant
-  password: vagrant
+  username: facsite
 
 production:
   <<: *base

@@ -4,7 +4,7 @@ class CreateNews < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.text :body
-      t.string :pictute
+      t.string :picture
       t.string :slug
       t.string :state
       t.integer :author_id

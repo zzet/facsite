@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205171501) do
+ActiveRecord::Schema.define(version: 20131222192124) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "attachments", force: true do |t|
     t.string   "title"
@@ -22,11 +25,34 @@ ActiveRecord::Schema.define(version: 20131205171501) do
     t.datetime "updated_at"
   end
 
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "category_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "category_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "category_anc_desc_udx", unique: true, using: :btree
+  add_index "category_hierarchies", ["descendant_id"], name: "category_desc_idx", using: :btree
+
   create_table "departaments", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.text     "history"
     t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "document_category_relationships", force: true do |t|
+    t.integer  "document_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,15 +68,40 @@ ActiveRecord::Schema.define(version: 20131205171501) do
     t.datetime "updated_at"
   end
 
+  create_table "faculties", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "history"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "news", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.text     "body"
-    t.string   "pictute"
+    t.string   "picture"
     t.string   "slug"
     t.string   "state"
     t.integer  "author_id"
     t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "newsable_id"
+    t.string   "newsable_type"
+  end
+
+  create_table "news_category_relationships", force: true do |t|
+    t.integer  "news_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news_document_relationships", force: true do |t|
+    t.integer  "news_id"
+    t.integer  "document_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
