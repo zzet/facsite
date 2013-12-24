@@ -14,5 +14,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 log/untranslated*
+/coverage
 /tmp
 /public/uploads/

@@ -75,6 +75,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'coveralls', require: false
+  gem 'simplecov', :require => false
   # gem 'ruby-prof'
   gem "rake"
   gem 'ci_reporter'

@@ -1,7 +1,15 @@
+require 'simplecov'
 ENV["RAILS_ENV"] = "test"
+
+if ENV["CI"]
+  SimpleCov.start 'rails'
+  #require 'coveralls'
+  #Coveralls.wear!
+end
 
 require File.expand_path('../../config/environment', __FILE__)
 
+I18n.locale = :ru
 require 'rails/test_help'
 require "minitest/rails"
 require "minitest/hell" #NOTE parallel
