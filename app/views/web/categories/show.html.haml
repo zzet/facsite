@@ -1,2 +1,54 @@
-%h1 Web::Categories#show
-%p Find me in app/views/web/categories/show.html.haml
+#content
+  .container
+    .row
+      .span12
+        %h2= @category.name
+        %ul.thumbnails.thumbnails1
+          %li
+            .thumbnail.clearfix
+              -#%figure
+                -#= image_tag news.picture
+              .caption
+                %h4= t('.categories_is_a')
+                %p= t('.categories_is_a_description')
+
+        .span4
+          %h3= t('.latest_news')
+          %ul.thumbnails.thumbnails2
+            - @news.each do |news|
+              %li
+                .thumbnail.clearfix
+                  %figure
+                    = image_tag news.picture
+                  .caption
+                    %h4= news.title
+                    = news.description.html_safe
+                    = link_to t('.more'), news_path(news)
+
+        .span4
+          %h3= t('.latest_events')
+          %ul.thumbnails.thumbnails2
+            - @events.each do |event|
+              %li
+                .thumbnail.clearfix
+                  %figure
+                    = image_tag event.picture
+                  .caption
+                    %h4= event.title
+                    = event.description.html_safe
+                    = link_to t('.more'), event_path(event)
+
+
+        .span3
+          %h3= t('.latest_documents')
+          %ul.thumbnails.thumbnails2
+            - @documents.each do |document|
+              %li
+                .thumbnail.clearfix
+                  %figure
+                    = image_tag document.picture
+                  .caption
+                    %h4= document.title
+                    = document.description.html_safe
+                    = link_to t('.more'), document_path(document)
+

@@ -1,0 +1,15 @@
+#content
+  .container
+    .row
+      .span9
+        %h2= @persone.name
+        %h4= sanitize @persone.position
+        .thumb2
+          .thumbnail.clearfix
+            %figure.img-polaroid
+              = image_tag @persone.photo
+            .caption
+              = @persone.bio.html_safe
+
+      .span3
+        = render 'web/shared/topics'

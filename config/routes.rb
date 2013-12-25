@@ -6,6 +6,7 @@ FacSite::Application.routes.draw do
       resources :events
       resources :categories
       resources :documents
+      resources :persones
       resources :questions do
         scope module: :questions do
           resource :answer
@@ -17,7 +18,9 @@ FacSite::Application.routes.draw do
     end
 
     resources :news,        only: [:index, :show]
+    resources :events,      only: [:index, :show]
     resources :documents,   only: [:index, :show]
+    resources :persones,    only: [:index, :show]
 
     resources :categories,  only: [:index, :show] do
       scope module: :categories do

@@ -2,8 +2,8 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :title
-      t.string :description
-      t.string :body
+      t.text :description
+      t.text :body
       t.string :picture
       t.string :state
       t.string :slug

@@ -9,10 +9,19 @@ ru:
         shared:
           navbar:
             news: 'Новости'
+            events: 'Мероприятия'
             faculty: 'Факультет'
+            persones: 'Коллектив'
             documents: ' Документы'
             categories: 'Категории'
             guest_book: 'Гостевая книга'
+      shared:
+        top_bar:
+          navigation:
+            support: 'Помощь'
+            quick_links: 'Еще какая нибудь херня'
+            partners: 'Партнеры'
+            faq: 'FAQs'
 
   navigation:
     home: 'Главная'
@@ -24,10 +33,39 @@ ru:
   '':
     inputs:
       current_state: 'Состояние'
+  web:
+    pages:
+      about:
+        about_us: 'О Факультете'
+        our_staff: 'Персоны'
+        read_more: 'Подробнее'
+    persones:
+      index:
+        latest_persones: 'Персоны'
+        more: 'Подробнее'
 
+    categories:
+      index:
+        categories: 'Категории'
+        more: 'Подробнее'
+
+      show:
+        categories_is_a: 'Тут должно быть что-то связанное с категорией'
+        categories_is_a_description: 'Тут должно быть что-нибудь связанное с описанием категории. Может быть для самой категории в админке будет задаваться описание.'
+        latest_news: 'Новости'
+        latest_events: 'Мероприятия'
+        latest_documents: 'Документы'
+
+    news:
+      index:
+        top_news: 'Важные новости'
+        latest_news: 'Последние новости'
+        upcoming_events: 'Ближайшие мероприятия'
   helpers:
     actions: 'Управление'
     links:
       new: 'Создать'
+      edit: 'Редактировать'
       cancel: 'Отмена'
-
+      destroy: 'Удалить'
+      back: 'Вернуться'

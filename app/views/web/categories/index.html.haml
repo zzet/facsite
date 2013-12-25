@@ -1,2 +1,17 @@
-%h1 Web::Categories#index
-%p Find me in app/views/web/categories/index.html.haml
+#content
+  .container
+    .row
+      .span12
+        %h2= t(".categories")
+        %ul.thumbnails.thumbnails3
+          - @categories.each do |category|
+            %li.thumbnail.clearfix.span3
+              %h3= category.name
+              %figure
+                -#= image_tag category.picture
+              .caption
+                -#= sanitize category.description
+                %ul
+                  - category.children.each do |subcategory|
+                    %li= link_to subcategory.name, category_path(subcategory.slug)
+              = link_to t('.more'), category_path(category.slug)

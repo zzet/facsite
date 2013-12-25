@@ -7,6 +7,10 @@ FactoryGirl.define do
     "string#{n}"
   end
 
+  sequence :position do |n|
+    "position#{n}"
+  end
+
   sequence :description, aliases: [:history] do |n|
     "description#{n}"
   end
@@ -19,7 +23,7 @@ FactoryGirl.define do
     "name#{n}"
   end
 
-  sequence :body do |n|
+  sequence :body, aliases: [:bio] do |n|
     "body#{n}"
   end
 

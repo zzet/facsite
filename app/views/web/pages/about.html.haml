@@ -11,113 +11,17 @@
             .caption
               = @faculty.history.html_safe
 
-        %h3 Our staff
+        %h3= t('.our_staff')
         .row
-          .span3
-            .thumb3
-              .thumbnail.clearfix
-                %figure
-                  %img{alt: "", src: "images/about02.jpg"}/
-                .caption
-                  .txt1 Adam Smith
-                  .txt2 Curabitur tristique nunc
-                  %a.button2{href: "#"} read more
-          .span3
-            .thumb3
-              .thumbnail.clearfix
-                %figure
-                  %img{alt: "", src: "images/about03.jpg"}/
-                .caption
-                  .txt1 Robert Mitchel
-                  .txt2 Curabitur tristique nunc
-                  %a.button2{href: "#"} read more
-          .span3
-            .thumb3
-              .thumbnail.clearfix
-                %figure
-                  %img{alt: "", src: "images/about04.jpg"}/
-                .caption
-                  .txt1 Mark Williams
-                  .txt2 Curabitur tristique nunc
-                  %a.button2{href: "#"} read more
-        .row
-          .span3
-            .thumb3
-              .thumbnail.clearfix
-                %figure
-                  %img{alt: "", src: "images/about05.jpg"}/
-                .caption
-                  .txt1 Lyndy Lefler
-                  .txt2 Curabitur tristique nunc
-                  %a.button2{href: "#"} read more
-          .span3
-            .thumb3
-              .thumbnail.clearfix
-                %figure
-                  %img{alt: "", src: "images/about06.jpg"}/
-                .caption
-                  .txt1 Amanda Shannon
-                  .txt2 Curabitur tristique nunc
-                  %a.button2{href: "#"} read more
-          .span3
-            .thumb3
-              .thumbnail.clearfix
-                %figure
-                  %img{alt: "", src: "images/about07.jpg"}/
-                .caption
-                  .txt1 Jesica Mors
-                  .txt2 Curabitur tristique nunc
-                  %a.button2{href: "#"} read more
+          - @persones.each do |persone|
+            .span3
+              .thumb3
+                .thumbnail.clearfix
+                  %figure
+                    = image_tag persone.photo
+                  .caption
+                    .txt1= persone.name
+                    .txt2= persone.position
+                    = link_to t('.read_more'), persone_path(persone), class: "button2"
       .span3
-        %h3 Topics
-        %p
-          Integer lacinia, velit sit amet bibendum hendrerit, neque justo ornare urna, non sodales nunc nibh vel purus. In urna. Sed sodales.
-        %ul.ul1
-          %li.nav1
-            %a{href: "#"}
-              Which program is
-              %br>/
-              right for you?
-          %li.nav2
-            %a{href: "#"}
-              Prio Learning
-              %br>/
-              Assessment
-          %li.nav3
-            %a{href: "#"}
-              Certificats and
-              %br>/
-              Teacher Education
-          %li.nav4
-            %a{href: "#"}
-              How to get
-              %br>/
-              Started?
-          %li.nav5
-            %a{href: "#"}
-              New Classroom
-              %br>/
-              Technology
-          %li.nav6
-            %a{href: "#"}
-              Individual
-              %br>/
-              Courses
-        %h3 Service List
-        %ul.ul3
-          %li
-            %a{href: "#"} Lorem ipsum dolor
-          %li
-            %a{href: "#"} Sit amet consectetue
-          %li
-            %a{href: "#"} Adipiscing elit
-          %li
-            %a{href: "#"} Nunc suscipit
-          %li
-            %a{href: "#"} Suspendisse enim arcu
-          %li
-            %a{href: "#"} Convallis non cursus sed
-          %li
-            %a{href: "#"} Dignissim et est
-          %li
-            %a{href: "#"} Aenean semper aliquet libero
+        = render 'web/shared/topics'

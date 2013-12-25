@@ -1,0 +1,17 @@
+#content
+  .container
+    .row
+      .span9
+        %h3= t('.latest_persones')
+        %ul.thumbnails.thumbnails2
+          - @persones.each do |persone|
+            %li
+              .thumbnail.clearfix
+                %figure
+                  = image_tag persone.photo
+                .caption
+                  %h4= persone.name
+                  = persone.position
+                  = link_to t('.more'), persone_path(persone)
+
+      .span3

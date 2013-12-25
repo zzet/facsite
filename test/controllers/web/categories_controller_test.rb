@@ -14,7 +14,7 @@ class Web::CategoriesControllerTest < ActionController::TestCase
 
   test "should get show" do
     category = create :category
-    get :show, id: category.id
+    get :show, id: category.slug
     assert_response :success
   end
 
