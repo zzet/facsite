@@ -5,7 +5,8 @@
     = f.input :description, as: :editor
     = f.input :body, as: :editor
     = f.input :slug
-    = f.input :state, as: :state_event
+    = f.input :state_event, as: :state_event
+    = f.input :important_state_event, as: :state_event
     = f.association :categories
     = f.association :documents
     -#= f.input :author_id

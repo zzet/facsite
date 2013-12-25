@@ -5,6 +5,115 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 
 
+/*** ESSENTIAL STYLES ***/
+
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float: left;
+	margin-bottom: 1em;
+}
+.sf-menu ul {
+	/*box-shadow: 2px 2px 6px rgba(0,0,0,.2);*/
+	min-width: 12em; /* allow long menu items to determine submenu width */
+	*width: 12em; /* no auto sub width for IE7, see white-space comment below */
+}
+.sf-menu a {
+	/*border-left: 1px solid #fff;
+	border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand 
+	border-top: 1px solid rgba(255,255,255,.5);
+	padding: .75em 1em;
+	text-decoration:none;
+	zoom: 1; /* IE7 */
+}
+.sf-menu a {
+	/*color: #13a;*/
+}
+.sf-menu li {
+	/* background: #BDD2FF; */
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+	-webkit-transition: background .2s;
+	transition: background .2s;
+}
+.sf-menu ul li {
+	/*background: #AABDE6;*/
+}
+.sf-menu ul ul li {
+	/* background: #9AAEDB; */
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+	/*background: #CFDEFF;*/
+	/* only transition out, not in */
+	-webkit-transition: none;
+	transition: none;
+}
+
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 2.25em;
+	min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position: absolute;
+	display: block;
+	right: .75em;
+	top: .9em;
+	width: 10px;
+	height: 10px;
+	text-indent: -999em;
+	overflow: hidden;
+	/*background: url(/assets/arrows-ffffff.png) no-repeat 0 -100px;*/
+}
+
+li:hover > a .sf-sub-indicator,
+li.sfHover > a .sf-sub-indicator {
+	background-position: -10px -100px;
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator {
+	background-position: 0 0;
+}
+.sf-menu ul li:hover > a .sf-sub-indicator,
+.sf-menu ul li.sfHover > a .sf-sub-indicator {
+	background-position: -10px 0;
+}
+
+
 /* Global properties ======================================================== */
 a[href^="tel:"] { color: inherit; text-decoration: none;}
 ::selection{ background:#a3bfd9!important; color:#fff}
@@ -126,12 +235,15 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 
 /* ============================= menu bot ====================== */
 .menu_bot { display:block;position: relative; z-index:10; text-align:left; white-space:nowrap;}
-#menu_bot { list-style: none; display:block; white-space:nowrap;  padding: 0; margin: 0;}
-#menu_bot > li { list-style: none; display: inline-block; margin-left: 1px; position:relative; float:left; white-space:nowrap;}
-#menu_bot > li:first-child{ margin-left: 0;}
-#menu_bot > li > a{ display:block; height:100%; text-decoration:none; position:relative; font-family:'Open Sans'; font-weight: 400; font-size: 12px; color: #fff; line-height: 20px; padding: 10px 15px; text-transform: uppercase;letter-spacing: 2px;}
-#menu_bot > li.active > a, #menu_bot > li.active > a:hover, #menu_bot > li.active > a:focus{color: #9de4ff; text-decoration: none; background: none;}
-#menu_bot > li > a:hover, #menu_bot > li > a:focus{color: #fff; background: #3c73ac; text-decoration: none;}
+.menu_bot { list-style: none; display:block; white-space:nowrap;  padding: 0; margin: 0;}
+.menu_bot .sf-menu > li { list-style: none; display: inline-block; margin-left: 1px; position:relative; float:left; white-space:nowrap;}
+.menu_bot .sf-menu > li:first-child{ margin-left: 0;}
+.menu_bot .sf-menu > li > a{ display:block; height:100%; text-decoration:none; position:relative; font-family:'Open Sans'; font-weight: 400; font-size: 12px; color: #fff; line-height: 20px; padding: 10px 15px; text-transform: uppercase;letter-spacing: 2px;}
+.menu_bot .sf-menu > li.active > a,
+.menu_bot .sf-menu > li.active > a:hover,
+.menu_bot .sf-menu > li.active > a:focus { color: #9de4ff; text-decoration: none; background: none;}
+.menu_bot .sf-menu > li > a:hover,
+.menu_bot .sf-menu > li > a:focus { color: #fff; background: #3c73ac; text-decoration: none;}
 
 /* ============================= search-form ====================== */
 .search-form-wrapper{float: left;}
@@ -424,7 +536,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 	.navbar_ .nav > li > a{letter-spacing: 1px;}
 	.sub-menu li a{letter-spacing: 1px;}
 
-	#menu_bot > li > a{letter-spacing: 1px;}
+	#menu_bot .sf-menu  > li > a{letter-spacing: 1px;}
 
 	#slider3 .carousel.main{width: 744px;}
 
@@ -456,7 +568,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 	.sub-menu li a {padding-left: 30px;}
 	.sub-menu li li a {padding-left: 45px;}
 
-	#menu_bot > li{float: none; display: block; margin-left: 0; margin-bottom: 1px;}
+	#menu_bot .sf-menu > li{float: none; display: block; margin-left: 0; margin-bottom: 1px;}
 
 	#slider3 .carousel.main{width: 460px;}
 

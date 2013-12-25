@@ -13,6 +13,14 @@ ru:
             documents: ' Документы'
             categories: 'Категории'
             guest_book: 'Гостевая книга'
+
+  navigation:
+    home: 'Главная'
+    about: 'Факультет'
+    news: 'Новости и Мероприятия'
+    documents: 'Документы'
+    contacts: 'Контактная информация'
+
   '':
     inputs:
       current_state: 'Состояние'
@@ -22,3 +30,4 @@ ru:
     links:
       new: 'Создать'
       cancel: 'Отмена'
+

@@ -3,6 +3,7 @@ FacSite::Application.routes.draw do
   scope module: :web do
     namespace :admin do
       resources :news
+      resources :events
       resources :categories
       resources :documents
       resources :questions do
@@ -15,8 +16,18 @@ FacSite::Application.routes.draw do
       root to: "welcome#index"
     end
 
-    resources :news, only: [:index, :show]
+    resources :news,        only: [:index, :show]
+    resources :documents,   only: [:index, :show]
+
+    resources :categories,  only: [:index, :show] do
+      scope module: :categories do
+        resources :documents, only: [:index]
+        resources :news,      only: [:index]
+      end
+    end
+
     resources :guest_books
+
     resources :pages do
       collection do
         get :about

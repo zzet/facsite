@@ -21,6 +21,9 @@ class Document < ActiveRecord::Base
   has_many :news_document_relationships, dependent: :destroy
   has_many :news, through: :news_document_relationships
 
+  has_many :event_document_relationships, dependent: :destroy
+  has_many :events, through: :event_document_relationships
+
   validates :title,       presence: true
   validates :description, presence: true
   validates :body,        presence: true

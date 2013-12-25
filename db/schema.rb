@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131225103215) do
+ActiveRecord::Schema.define(version: 20131225143905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,34 @@ ActiveRecord::Schema.define(version: 20131225103215) do
     t.datetime "updated_at"
   end
 
+  create_table "event_category_relationships", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_document_relationships", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "document_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "body"
+    t.string   "picture"
+    t.string   "state"
+    t.string   "slug"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "faculties", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -99,6 +127,7 @@ ActiveRecord::Schema.define(version: 20131225103215) do
     t.datetime "updated_at"
     t.integer  "newsable_id"
     t.string   "newsable_type"
+    t.string   "important_state"
   end
 
   create_table "news_category_relationships", force: true do |t|

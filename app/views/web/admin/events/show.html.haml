@@ -1,0 +1,41 @@
+- model_class = Event
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @event.title
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @event.description.html_safe
+%p
+  %strong= model_class.human_attribute_name(:body) + ':'
+  %br
+  = @event.body.html_safe
+%p
+  %strong= model_class.human_attribute_name(:picture) + ':'
+  %br
+  = image_tag @event.picture
+%p
+  %strong= model_class.human_attribute_name(:slug) + ':'
+  %br
+  = @event.slug
+%p
+  %strong= model_class.human_attribute_name(:state) + ':'
+  %br
+  = @event.state
+%p
+  %strong= model_class.human_attribute_name(:published_at) + ':'
+  %br
+  = @event.published_at
+-#%p
+  -#%strong= model_class.human_attribute_name(:eventable) + ':'
+  -#%br
+  -#= @event.eventable.try(:title)
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), admin_events_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_event_path(@event), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_event_path(@event), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

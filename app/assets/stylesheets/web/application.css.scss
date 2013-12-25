@@ -9,9 +9,6 @@
  *= require ./bootstrap-responsive
  *= require ./supersized.core
  *= require ./style
- *= require superfish
- *= require superfish-vertical
- *= require superfish-navbar
  *= require_self
  */
 
@@ -41,3 +38,4 @@ footer {
 .medium {
   font-size: 90%;
 }
+

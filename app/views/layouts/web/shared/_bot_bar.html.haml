@@ -3,10 +3,11 @@
     .row
       .span12
         .menu_bot
-          %ul#menu_bot.clearfix
-            %li.active= link_to t('.home'), root_path
-            %li= link_to t('.about'), about_pages_path
-            %li= link_to t('.home'), root_path
-            %li= link_to t('.news'), root_path
-            %li= link_to t('.documents'), root_path
-            %li= link_to t('.contacts'), root_path
+          = render_navigation level: 1
+          -#%ul#menu_bot.clearfix
+            -#%li.active= link_to t('.home'), root_path
+            -#%li= link_to t('.about'), about_pages_path
+            -#%li= link_to t('.home'), root_path
+            -#%li= link_to t('.news'), root_path
+            -#%li= link_to t('.documents'), root_path
+            -#%li= link_to t('.contacts'), root_path

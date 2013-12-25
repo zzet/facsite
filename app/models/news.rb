@@ -2,19 +2,20 @@
 #
 # Table name: news
 #
-#  id            :integer          not null, primary key
-#  title         :string(255)
-#  description   :text
-#  body          :text
-#  picture       :string(255)
-#  slug          :string(255)
-#  state         :string(255)
-#  author_id     :integer
-#  published_at  :datetime
-#  created_at    :datetime
-#  updated_at    :datetime
-#  newsable_id   :integer
-#  newsable_type :string(255)
+#  id              :integer          not null, primary key
+#  title           :string(255)
+#  description     :text
+#  body            :text
+#  picture         :string(255)
+#  slug            :string(255)
+#  state           :string(255)
+#  author_id       :integer
+#  published_at    :datetime
+#  created_at      :datetime
+#  updated_at      :datetime
+#  newsable_id     :integer
+#  newsable_type   :string(255)
+#  important_state :string(255)
 #
 
 class News < ActiveRecord::Base
@@ -53,9 +54,18 @@ class News < ActiveRecord::Base
     end
   end
 
-  include NewsRepository
+  state_machine :important_state, initial: :normal do
+    state :normal
+    state :hot
 
-  def to_s
-    name
+    event :to_normal do
+      transition hot: :normal
+    end
+
+    event :to_hot do
+      transition normal: :hot
+    end
   end
+
+  include NewsRepository
 end

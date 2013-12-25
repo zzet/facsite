@@ -7,6 +7,7 @@
 #  parent_id  :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  slug       :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

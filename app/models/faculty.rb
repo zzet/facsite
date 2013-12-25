@@ -14,5 +14,6 @@
 class Faculty < ActiveRecord::Base
 
   has_many :news, as: :newsable
+  has_many :events, as: :eventable
   mount_uploader :image, ::ImageUploader
 end
