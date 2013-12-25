@@ -11,4 +11,6 @@
 
 class Category < ActiveRecord::Base
   acts_as_tree
+
+  validates :slug, presence: true, uniqueness: true
 end

@@ -1,0 +1,52 @@
+#content
+  .container
+    .row
+      .span9
+        %h2 Contact Address
+        %figure.google_map
+          %iframe{frameborder: "0", height: "400", marginheight: "0", marginwidth: "0", scrolling: "no", src: "https://maps.google.com/maps?f=q&ie=UTF8&t=m&ll=54.321285,48.407435&spn=0.002503,0.009216&z=17&output=embed", width: "860"}
+            %br/
+            %small
+              %a{href: "https://maps.google.com/maps?f=q&ie=UTF8&t=m&ll=54.321285,48.407435&spn=0.002503,0.009216&z=17&source=embed", style: "color:#0000FF;text-align:left"} Просмотреть увеличенную карту
+        %h4 Исторический факультет
+        %p
+          Адрес: ул. Корюкина, д. 2, каб. 26а.
+          %br/
+          Телефон: 8 84-22 44-16-98.
+          %br/
+          E-mail:
+          = mail_to "chia58@rambler.ru"
+
+        %h3 Contact Form
+        #note
+        #fields
+          %form#ajax-contact-form.form-horizontal{action: "javascript:alert('success!');"}
+            .row
+              .span4
+                .control-group
+                  %label.control-label{for: "inputName"} Your full name:
+                  .controls
+                    %input#inputName.span4{name: "name", onblur: "if(this.value=='') this.value='Your full name:'", onfocus: "if(this.value =='Your full name:' ) this.value=''", type: "text", value: "Your full name:"}/
+                .control-group
+                  %label.control-label{for: "inputEmail"} Your email:
+                  .controls
+                    %input#inputEmail.span4{name: "email", onblur: "if(this.value=='') this.value='Your email:'", onfocus: "if(this.value =='Your email:' ) this.value=''", type: "text", value: "Your email:"}/
+                .control-group
+                  %label.control-label{for: "inputPhone"} Phone number:
+                  .controls
+                    %input#inputPhone.span4{name: "phone", onblur: "if(this.value=='') this.value='Phone number:'", onfocus: "if(this.value =='Phone number:' ) this.value=''", type: "text", value: "Phone number:"}/
+              .span5
+                .control-group
+                  %label.control-label{for: "inputMessage"} Message:
+                  .controls
+                    %textarea#inputMessage.span5{name: "content", onblur: "if(this.value=='') this.value='Message:'", onfocus: "if(this.value =='Message:' ) this.value=''"} Message:
+            .row
+              .span4
+                .control-group.capthca
+                  %label.control-label{for: "inputCapthca"} Capthca:
+                  .controls
+                    %input#inputCapthca{name: "capthca", onblur: "if(this.value=='') this.value='Capthca:'", onfocus: "if(this.value =='Capthca:' ) this.value=''", type: "text", value: "Capthca:"}/
+                    %img{src: "captcha/captcha.php"}/
+            %button.submit{type: "submit"} Submit
+      .span3
+        = render 'web/shared/topics'

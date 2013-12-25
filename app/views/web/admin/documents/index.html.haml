@@ -6,7 +6,6 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:title)
-      %th= model_class.human_attribute_name(:attachment)
       %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:body)
       %th= model_class.human_attribute_name(:state)
@@ -17,12 +16,11 @@
     - @documents.each do |document|
       %tr
         %td= document.id
-        %td= document.title
-        %td= document.attachment
+        %td= link_to document.title, document.attachment_url
         %td= document.description
         %td= document.body
         %td= document.state
-        %td= document.photo
+        %td= image_tag document.photo
         %td=l document.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_document_path(document), :class => 'btn btn-mini'

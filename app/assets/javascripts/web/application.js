@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require chosen-jquery
 //= require cocoon
 //= require jquery.ui.all
@@ -10,4 +9,14 @@
 
 //= require angular
 //= require angular-resource
+
+//= require ./bootstrap
+//= require ./jquery.easing.1.3
+//= require ./jquery.ui.totop
+//= require ./supersized.core.3.2.1
+//= require ./camera
+
+//= require superfish
+//= require hoverIntent
+//= require caroufredsel
 //= require_self

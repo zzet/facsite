@@ -1,0 +1,87 @@
+#content
+  .container
+    .row
+      .span9
+        %h2= t(".to_news")
+        %ul.thumbnails.thumbnails1
+          - @top_news.each do |news|
+            %li
+              .thumbnail.clearfix
+                %figure
+                  %img{alt: "", src: "images/news01.jpg"}/
+                .caption
+                  %h4= news.title
+                  %p= news.description.html_safe
+                  = link_to t('.read_more'), news, class: 'button1'
+
+        %h3 Latest Events
+        %ul.thumbnails.thumbnails2
+          %li
+            .thumbnail.clearfix
+              %figure
+                %img{alt: "", src: "images/news03.jpg"}/
+              .caption
+                %h4
+                  Lorem ipsum dolor sit amet, consectetu
+                %p
+                  Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet
+                  %a{href: "#"}
+                    %b more
+          %li
+            .thumbnail.clearfix
+              %figure
+                %img{alt: "", src: "images/news04.jpg"}/
+              .caption
+                %h4
+                  Lorem ipsum dolor sit amet, consectetu
+                %p
+                  Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet
+                  %a{href: "#"}
+                    %b more
+        %ul.thumbnails.thumbnails2
+          %li
+            .thumbnail.clearfix
+              %figure
+                %img{alt: "", src: "images/news05.jpg"}/
+              .caption
+                %h4
+                  Lorem ipsum dolor sit amet, consectetu
+                %p
+                  Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet
+                  %a{href: "#"}
+                    %b more
+          %li
+            .thumbnail.clearfix
+              %figure
+                %img{alt: "", src: "images/news06.jpg"}/
+              .caption
+                %h4
+                  Lorem ipsum dolor sit amet, consectetu
+                %p
+                  Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet
+                  %a{href: "#"}
+                    %b more
+      .span3
+        %h3 Upcoming Events
+        .thumb4
+          .thumbnail.clearfix
+            %figure.img-polaroid
+              %img{alt: "", src: "images/news07.jpg"}/
+            .caption
+              %h4
+                Lorem ipsum dolor sit amet, consectetur
+              %p
+                Integer lacinia, velit sit amet bibendum hendrerit, neque justo ornare urna, non sodales nunc nibh vel purus. In urna. Sed sodales. enim quis ultricies gravida, mauris libero hendrerit lorem, vel vulputate urna lacus quis mauris. Mauris scelerisque augue
+                %a{href: "#"}
+                  %b more
+        .thumb4
+          .thumbnail.clearfix
+            %figure.img-polaroid
+              %img{alt: "", src: "images/news08.jpg"}/
+            .caption
+              %h4
+                Lorem ipsum dolor sit amet, consectetur
+              %p
+                Integer lacinia, velit sit amet bibendum hendrerit, neque justo ornare urna, non sodales nunc nibh vel purus. In urna. Sed sodales. enim quis ultricies gravida, mauris libero hendrerit lorem, vel vulputate urna lacus quis mauris. Mauris scelerisque augue
+                %a{href: "#"}
+                  %b more

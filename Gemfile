@@ -68,6 +68,9 @@ gem 'factory_girl_rails'
 gem 'breadcrumbs_on_rails'
 # gem 'capybara-console'
 gem 'untranslated'
+gem 'superfish-rails'
+gem 'caroufredsel-rails', :git => 'git://github.com/johnbintz/caroufredsel-rails.git'
+gem "simple-navigation"
 
 group :development, :test do
   gem 'listen'

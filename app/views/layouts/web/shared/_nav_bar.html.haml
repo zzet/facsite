@@ -1,0 +1,66 @@
+.menu_wrapper
+  .container
+    .row
+      .span12
+        .navbar.navbar_
+          .navbar-inner.navbar-inner_
+            %a.btn.btn-navbar.btn-navbar_{"data-target" => ".nav-collapse_", "data-toggle" => "collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            .nav-collapse.nav-collapse_.collapse
+              %ul.nav.sf-menu.clearfix
+                %li.active
+                %li.active= link_to t('.home'), root_path
+                %li= link_to t('.about'), about_pages_path
+                %li= link_to t('.home'), root_path
+                %li= link_to t('.students'), root_path
+                %li= link_to t('.abitura'), root_path
+                %li= link_to t('.news'), root_path
+                %li= link_to t('.documents'), root_path
+                %li= link_to t('.contacts'), contacts_pages_path
+
+                -#%li.sub-menu.sub-menu-1
+                  -#%a{href: "index-2.html"} students
+                  -#%ul
+                    -#%li
+                      -#%a{href: "index-2.html"} community
+                    -#%li.sub-menu.sub-menu-2
+                      -#%a{href: "index-1.html"}
+                        -#campus
+                        -#%em
+                      -#%ul
+                        -#%li
+                          -#%a{href: "index-2.html"} lorem ipsum dolor
+                        -#%li
+                          -#%a{href: "index-2.html"} sit amet
+                        -#%li
+                          -#%a{href: "index-2.html"} adipiscing elit
+                        -#%li
+                          -#%a{href: "index-2.html"} nunc suscipit
+                        -#%li
+                          -#%a{href: "404.html"} 404 page not found
+                    -#%li.sub-menu.sub-menu-2
+                      -#%a{href: "index-1.html"}
+                        -#events
+                        -#%em
+                      -#%ul
+                        -#%li
+                          -#%a{href: "index-2.html"} lorem ipsum dolor
+                        -#%li
+                          -#%a{href: "index-2.html"} sit amet
+                        -#%li
+                          -#%a{href: "index-2.html"} adipiscing elit
+                        -#%li
+                          -#%a{href: "index-2.html"} nunc suscipit
+
+
+
+
+                -#%li
+                  -#%a{href: "index-3.html"} news & Events
+                -#%li
+                  -#%a{href: "index-4.html"} photo gallery
+                -#%li
+                  -#%a{href: "index-5.html"} contacts
+

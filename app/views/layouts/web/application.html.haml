@@ -1,0 +1,19 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = stylesheet_link_tag "web/application", media: "all"
+    = javascript_include_tag "web/application"
+    %script{src: "http://code.jquery.com/jquery-migrate-1.2.1.js"}
+    = csrf_meta_tags
+    %title= t('application.name')
+  %body.main
+    #main
+      #inner
+        = render 'layouts/web/shared/top_bar'
+        = render 'layouts/web/shared/nav_bar'
+        = yield
+        = render 'layouts/web/shared/bot_bar'
+        = render 'layouts/web/shared/footer'

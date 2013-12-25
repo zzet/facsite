@@ -1,0 +1,25 @@
+.top1
+  .container
+    .row
+      .span12
+        .top1_inner.clearfix
+          .top2.clearfix
+            .menu_top
+              %ul#menu_top.clearfix
+                %li= link_to t('.support'), about_pages_path
+                %li= link_to t('.quick_links'), about_pages_path
+                %li= link_to t('.partners'), about_pages_path
+                %li= link_to t('.faq'), about_pages_path
+            .top3.clearfix
+              .top3_inner.clearfix
+                .phone1
+                  %span Call us:
+                  1 800 123 4567
+                -#.search-form-wrapper.clearfix
+                  -#%form#search-form.navbar-form{"accept-charset" => "utf-8", action: "search.php", method: "GET"}
+                    -#%input{name: "s", onblur: "if(this.value=='') this.value='Search'", onfocus: "if(this.value =='Search' ) this.value=''", type: "text", value: "Search"}/
+                    -#%a{href: "#", onclick: "document.getElementById('search-form').submit()"}
+          %header
+            .logo_wrapper
+              = link_to root_path, class: 'logo' do
+                = image_tag '/images/logo.png'

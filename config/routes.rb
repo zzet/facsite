@@ -15,7 +15,14 @@ FacSite::Application.routes.draw do
       root to: "welcome#index"
     end
 
+    resources :news, only: [:index, :show]
     resources :guest_books
+    resources :pages do
+      collection do
+        get :about
+        get :contacts
+      end
+    end
 
     root to: "welcome#index"
   end

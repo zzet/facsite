@@ -1,2 +1,151 @@
-%h1 Web::Welcome#index
-%p Find me in app/views/web/welcome/index.html.haml
+= render 'slider_top'
+= render 'slider_middle'
+
+#content
+  .container
+    .row
+      .span12
+        .hl1
+        .splash
+          .row
+            .span6
+              %h2.home Welcome to IQ Education!
+              %h4 Committed to student success for over 30 years!
+              %p
+                Integer lacinia, velit sit amet bibendum hendrerit, neque justo ornare urna, non sodales nunc nibh vel purus. In urna. Sed sodales, enim quis ultricies gravida, mauris libero hendrerit lorem, vel vulputate urna lacus quis mauris. Mauris scelerisque augue eu felis. Nunc quam massa, mattis quis, hendrerit sed, mattis eu, est.
+              %a.button1{href: "#"} Join us today! Click here.
+            .span3
+              %ul.ul1
+                %li.nav1
+                  %a{href: "#"}
+                    Which program is
+                    %br>/
+                    right for you?
+                %li.nav2
+                  %a{href: "#"}
+                    Prio Learning
+                    %br>/
+                    Assessment
+                %li.nav3
+                  %a{href: "#"}
+                    Certificats and
+                    %br>/
+                    Teacher Education
+            .span3
+              %ul.ul1
+                %li.nav4
+                  %a{href: "#"}
+                    How to get
+                    %br>/
+                    Started?
+                %li.nav5
+                  %a{href: "#"}
+                    New Classroom
+                    %br>/
+                    Technology
+                %li.nav6
+                  %a{href: "#"}
+                    Individual
+                    %br>/
+                    Courses
+        .hl1
+        .row
+          .span4
+            .box1
+              .txt1
+                You May be
+                %br>/
+                Interested in:
+              %ul.ul2
+                %li
+                  %a{href: "#"} Lorem ipsum dolor
+                %li
+                  %a{href: "#"} Sit amet consectetue
+                %li
+                  %a{href: "#"} Adipiscing elit
+                %li
+                  %a{href: "#"} Nunc suscipit
+                %li
+                  %a{href: "#"} Suspendisse enim arcu
+                %li
+                  %a{href: "#"} Convallis non cursus sed
+                %li
+                  %a{href: "#"} Dignissim et est
+                %li
+                  %a{href: "#"} Aenean semper aliquet libero
+          .span8
+            .box2
+              .txt1 Online Education Adwantages
+              .txt2 Vestibulum hendrerit velit et est
+              .thumb1
+                .thumbnail.clearfix
+                  %figure
+                    %img{alt: "", src: "/images/home01.jpg"}/
+                  .caption
+                    %p
+                      Integer lacinia, velit sit amet bibendum hendrerit, neque justo ornare urna, non sodales nunc nibh vel purus. In urna. Sed sodales, enim quis ultricies gravida, mauris libero hendrerit lorem, vel vulputate urna lacus quis mauris. Duis aliquam. Vivamus ac ligula. Cras et metus a ipsum suscipit aliquam. Morbi at justo. Nulla in pede id dui consectetuer vulputate. Aliquam lobortis. Nunc dignissim pharetra urna. Mauris scelerisque augue eu felis. Nunc quam massa, mattis quis, hendrerit sed, mattis eu, est. Vivamus pretium metus ut nisl. Nullam aliquet mauris eu neque. Quisque consequat. Vestibulum hendrerit velit et est. Curabitur iaculis egestas orci. Nunc pellentesque mi ut ante.
+              .line1
+              .text-right
+                %a.button2{href: "#"} read more
+
+
+:javascript
+  $(document).ready(function() {
+    // camera
+    $('#camera_wrap').camera({
+      //thumbnails: true
+      autoAdvance			: true,		
+      mobileAutoAdvance	: true,
+      //fx					: 'simpleFade',
+      height: '32%',
+      hover: false,
+      loader: 'none',
+      navigation: false,
+      navigationHover: true,
+      mobileNavHover: true,
+      playPause: false,
+      pauseOnClick: false,
+      pagination			: true,
+      time: 7000,
+      transPeriod: 1000,
+      minHeight: '150px'
+    });
+  
+    //	carouFredSel
+    $('#slider3 .carousel.main ul').carouFredSel({
+      auto: {
+        timeoutDuration: 8000					
+      },
+      responsive: true,
+      prev: '.prev3',
+      next: '.next3',
+      width: '100%',
+      scroll: {
+        items: 1,
+        duration: 1000,
+        easing: "easeOutExpo"
+      },			
+      items: {
+            width: '350',
+        height: 'variable',	//	optionally resize item-height			  
+        visible: {
+          min: 1,
+          max: 4
+        }
+      },
+      mousewheel: false,
+      swipe: {
+        onMouse: true,
+        onTouch: true
+        }
+    });
+    $(window).bind("resize",updateSizes_vat).bind("load",updateSizes_vat);
+    function updateSizes_vat(){		
+      $('#slider3 .carousel.main ul').trigger("updateSizes");
+    }
+    updateSizes_vat();
+  });
+
+  $(window).load(function() {
+
+  });
