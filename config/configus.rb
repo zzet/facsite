@@ -5,7 +5,7 @@ Configus.build Rails.env do
     end
     host 'facsite.ru'
     carrierwave do
-      storage :fog
+      storage :file
     end
     mailer do
       from "noreply@facsite.ru"
@@ -34,7 +34,7 @@ Configus.build Rails.env do
 
   env :staging, parent: :production do
     carrierwave do
-      storage :fog
+      storage :file
     end
     basic_auth do
       username 'another_user'

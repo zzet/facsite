@@ -1,4 +1,5 @@
 require 'rake'
+require 'capistrano-rbenv'
 
 set :stages, %w(production staging)
 set :default_stage, "staging"
@@ -12,8 +13,11 @@ set :deploy_to,      "/rest/u/#{user}/apps/#{application}"
 #set :bundle_without, %w[development test]
 set :asset_env,      "RAILS_GROUPS=assets RAILS_RELATIVE_URL_ROOT=#{mount_point.sub(/\/+\Z/, '')}"
 
+set :rbenv_path, '/usr/local/rbenv'
+set :rbenv_ruby_version, "2.0.0-p247"
+
 set :scm, :git
-set :repository, "git@github.com:zzet/facsite.git"
+set :repository, "git://github.com/zzet/facsite.git"
 
 set :use_sudo, false
 set :ssh_options, :forward_agent => true
@@ -40,7 +44,6 @@ namespace :deploy do
       runit expects 2 to tell it to send the USR2 signal to the process.
   DESC
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "sudo sv restart /etc/service/facsite-sidekiq-*"
     run "sudo sv restart /etc/service/facsite-web-*"
   end
 end

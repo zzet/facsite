@@ -1,9 +1,6 @@
 # Load DSL and Setup Up Stages
 require 'capistrano/version'
-load 'deploy'
-
 require 'bundler/capistrano'
-
 require 'capistrano/ext/multistage'
 
 # Maintance page with deploy
