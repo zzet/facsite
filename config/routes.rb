@@ -12,6 +12,9 @@ FacSite::Application.routes.draw do
           resource :answer
         end
       end
+
+      resources :libraries
+
       resource :faculties
 
       root to: "welcome#index"

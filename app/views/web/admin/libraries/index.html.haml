@@ -1,0 +1,27 @@
+- model_class = Library
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:image)
+      %th= model_class.human_attribute_name(:state)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @libraries.each do |library|
+      %tr
+        %td= link_to library.id, admin_library_path(library)
+        %td= library.title
+        %td= library.description.html_safe
+        %td= image_tag library.image
+        %td= library.state
+        %td=l library.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_library_path(library), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_library_path(library), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_admin_library_path, :class => 'btn btn-primary'
