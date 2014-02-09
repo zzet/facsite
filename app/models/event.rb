@@ -4,10 +4,11 @@
 #
 #  id           :integer          not null, primary key
 #  title        :string(255)
-#  description  :string(255)
-#  body         :string(255)
+#  description  :text
+#  body         :text
 #  picture      :string(255)
 #  state        :string(255)
+#  slug         :string(255)
 #  started_at   :datetime
 #  ended_at     :datetime
 #  published_at :datetime
